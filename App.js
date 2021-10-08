@@ -54,11 +54,11 @@ const App: () => Node = () => {
           }}>
           <Text style={styles.text}>MOBILE IS COOL</Text>
           <Button
-            onPress={takePicture()}
+            onPress={takePicture}
             title="launchCamera"
             style={styles.button}
           />
-          <Button onPress={searchInGallery()} title="launchImageLibrary" />
+          <Button onPress={searchInGallery} title="launchImageLibrary" />
         </View>
       </ScrollView>
     </SafeAreaView>
