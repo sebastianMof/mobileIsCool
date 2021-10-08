@@ -10,8 +10,7 @@
     "lint": "eslint .",
     "clean": "rm -rf node_modules && npm i",
     "androidClean": "cd android && ./gradlew clean && cd .. && npm run android",
-    "iOSClean": "rm -rf ~/Library/Caches/CocoaPods && cd ios && rm -rf Pods && rm -rf Podfile.lock && rm -rf ~/Library/Developer/Xcode/DerivedData/* && pod deintegrate && pod setup && pod install",
-        
+    "iOSClean": "rm -rf ~/Library/Caches/CocoaPods && cd ios && rm -rf Pods && rm -rf Podfile.lock && rm -rf ~/Library/Developer/Xcode/DerivedData/* && pod deintegrate && pod setup && pod install" 
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.4",
