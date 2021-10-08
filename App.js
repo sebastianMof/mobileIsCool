@@ -26,9 +26,14 @@ const App: () => Node = () => {
       title: 'testTitle',
       mediaType: 'photo',
     };
-    launchCamera(options, response => {
-      console.log('response: ', response);
-    });
+    try{
+      launchCamera(options, response => {
+        console.log('response: ', response);
+      });
+    }catch(e){
+      console.log('error catch: ',e);
+    }
+    
   };
 
   const searchInGallery = () => {
