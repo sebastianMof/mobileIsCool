@@ -53,7 +53,11 @@ const App: () => Node = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Text style={styles.text}>MOBILE IS COOL</Text>
-          <Button onPress={takePicture()} title="launchCamera" style={styles.button} />
+          <Button
+            onPress={takePicture()}
+            title="launchCamera"
+            style={styles.button}
+          />
           <Button onPress={searchInGallery()} title="launchImageLibrary" />
         </View>
       </ScrollView>
