@@ -8,15 +8,38 @@ import {
   Text,
   useColorScheme,
   View,
+  Button,
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  };
+
+  const takePicture = () => {
+    const options = {
+      title: 'testTitle',
+      mediaType: 'photo',
+    };
+    launchCamera(options, response => {
+      console.log('response: ', response);
+    });
+  };
+
+  const searchInGallery = () => {
+    const options = {
+      title: 'testTitle2',
+      mediaType: 'photo',
+      selectionLimit: 0,
+    };
+    launchImageLibrary(options, response => {
+      console.log('response 2: ', response);
+    });
   };
 
   return (
@@ -30,6 +53,8 @@ const App: () => Node = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Text style={styles.text}>MOBILE IS COOL</Text>
+          <Button onPress={takePicture()} title="launchCamera" />
+          <Button onPress={searchInGallery()} title="launchImageLibrary" />
         </View>
       </ScrollView>
     </SafeAreaView>
